@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+</head>
+
+<body ng-app="myapp">
+
+<div ng-controller="MyController" >
+    <form>
+		<input type="text" id="name" ng-model="myForm.name" ng-pattern="/^\d+$/"> Name <br/>
+	</form>
+
+    <div>
+        {{myForm.name}}
+    </div>
+</div>
+
+<script>
+    angular.module("myapp", [])
+            .controller("MyController", function($scope) {
+                $scope.myForm = {};
+                $scope.myForm.name = "Jakob Jenkov";
+            } );
+</script>
+
+</body>
+</html>
