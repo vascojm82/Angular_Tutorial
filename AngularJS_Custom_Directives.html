@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+</head>
+
+<body ng-app="myapp">
+
+<div ng-controller="MyController" >
+    <userinfo person="jakob"></userinfo><br/>
+	<userinfo person="john"></userinfo>
+</div>
+
+<script>
+myapp = angular.module("myapp", []);
+myapp.directive('userinfo', function() {
+    var directive = {};
+
+    directive.restrict = 'E';
+
+    directive.template = "User : <b>{{user.firstName}}</b> <b>{{user.lastName}}</b>";
+
+    directive.scope = {
+        user : "=person"
+    }
+
+    return directive;
+});
+
+myapp.controller("MyController", function($scope, $http) {
+    $scope.jakob = {};
+    $scope.jakob.firstName = "Jakob";
+    $scope.jakob.lastName  = "Jenkov";
+
+    $scope.john = {};
+    $scope.john.firstName = "John";
+    $scope.john.lastName  = "Doe";
+});
+
+</script>
+
+</body>
+</html>

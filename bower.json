@@ -1,0 +1,21 @@
+{
+  "name": "Angular_Tutorial",
+  "homepage": "https://github.com/vascojm82/Angular_Tutorial",
+  "authors": [
+    "Jose M. Vasconcellos <miguel_vasconce@hotmail.com>"
+  ],
+  "description": "Angular Tutorial",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5"
+  }
+}

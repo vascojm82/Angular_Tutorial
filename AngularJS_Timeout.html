@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+</head>
+
+<body ng-app="myapp">
+
+<div ng-controller="DIController" >
+    <form>
+      <h1>Look at console Output !</h1>
+      <h4>callAtTimeout() will be called after 3 seconds because of AngularJS $timeout service</h4>
+    </form>
+</div>
+
+<script>
+var myapp = angular.module("myapp", []);
+
+myapp.controller("DIController", function($scope, $timeout){
+
+  $scope.callAtTimeout = function() {
+      console.log("$scope.callAtTimeout - Timeout occurred");
+  }
+
+  $timeout( function(){ $scope.callAtTimeout(); }, 3000);
+});
+</script>
+
+</body>
+</html>
